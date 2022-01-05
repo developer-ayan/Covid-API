@@ -1,0 +1,23 @@
+.container {
+margin : 50px 0;
+}
+
+.card {
+}
+
+.infacted {
+    margin: 10px 5px !important;
+
+    border-bottom:  10px solid rgb(0, 0, 255 , 0.5);
+}
+
+.recovered {
+    margin: 10px 5px !important;
+
+    border-bottom:  10px solid rgb(0, 255,0 , 0.5) !important;
+}
+
+.deaths {
+    margin: 10px 5px !important;
+    border-bottom:  10px solid rgb(255, 0,0 , 0.5);
+}

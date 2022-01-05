@@ -1,25 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import Charts from './Components/Charts/Charts';
+import Cards from './Components/Cards/Cards';
+import CountryPicker from './Components/CountryPicker/CountryPicker';
+import React , {useState} from 'react';
+import { fetchData } from './Api/fetchData';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  state = {
+    data : {}
+  }
+  
+  async componentDidMount(){
+    const fetchdata = await fetchData()
+    this.setState({data : fetchdata})
+  }
+  render() {
+
+    const { data } = this.state
+
+
+    return (
+      <div className="container">
+
+        <Cards data={data}/>
+        <CountryPicker />
+        <Charts />
+
+
+
+      </div>
+    );
+  }
+
 }
 
 export default App;
